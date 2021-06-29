@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      name: config-client # 文件名
+      uri: http://localhost:3344 # config的配置主机地址
+      label: master # 文件在gitee上的分支
+      profile: dev # 要拿的是哪个环境
+# bootstrap是系统级配置文件，application是用户级，bootstrap的优先级高些

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spring-cloud-zuul
+server:
+  port: 9527
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/ #集群配置
+    register-with-eureka: true
+  instance:
+    instance-id: spring-cloud-zuul-9527
+    prefer-ip-address: true # 才能自动获取本机url 不配置的话会报错
+zuul:
+  routes: # 请求地址 ip:网关端口/微服务名字/具体请求 如：http://localhost:9527/springClod-producer-dept/queryList
+    springcloud-provider-dept.serviceId: springClod-producer-dept # 原路径这是微服务的名字
+    springcloud-provider-dept.path: /dept/** # 重新定义名字就是把微服务的名字换掉不暴露出微服务的名字
+  ignored-services: springClod-producer-dept # 忽略原路径请求可以加 * 通配符表示全部忽略 现在请求路径是http://localhost:9527/dept/queryList
+
+

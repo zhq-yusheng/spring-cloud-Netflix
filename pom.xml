@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yu</groupId>
+    <artifactId>SpringCloud</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>SpringCloud-api</module>
+        <module>producer-dept-8001</module>
+        <module>SpingCloud-consumer-80</module>
+        <module>SpringCloud-eureka</module>
+        <module>SpringCloud-eureka-7002</module>
+        <module>SpringCloud-eureka-7003</module>
+        <module>producer-dept-8002</module>
+        <module>producer-dept-8003</module>
+        <module>SpingCloud-consumer-feign</module>
+        <module>producer-dept-hystrix-8003</module>
+        <module>SpringCloud-consumer-hystrix-dashboard</module>
+        <module>SpringCloud-zuul-9527</module>
+        <module>SpringCloud-config-server-3344</module>
+        <module>SpringClod-config-client-3355</module>
+    </modules>
+    <!-- 设置打包方式 -->
+    <packaging>pom</packaging>
+
+    <properties>
+        <mysql.verson>8.0.22</mysql.verson>
+        <druid.verson>1.2.1</druid.verson>
+        <lombok.verson>1.18.16</lombok.verson>
+        <mybatis.verson>2.0.0</mybatis.verson>
+        <log4g.verson>1.2.17</log4g.verson>
+        <junit.verson>4.13</junit.verson>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- spring cloud 的依赖包 -->
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR9</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring boot 的依赖包 -->
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.3.5.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.verson}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.verson}</version>
+            </dependency>
+
+            <!--  spring boot 整合mybatis的包 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.verson}</version>
+            </dependency>
+            <!-- log4j -->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4g.verson}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.verson}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- boot启动器 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>2.4.2</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

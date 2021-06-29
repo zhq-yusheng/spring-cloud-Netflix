@@ -1,0 +1,32 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: springClod-producer-dept
+  datasource:
+    url: jdbc:mysql://localhost:3306/clouddb2?characterEncoding=UTF-8&serverTimezone=GMT&useUnicode=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  type-aliases-package: com.yu.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    cache-enabled: true
+eureka:
+  client:
+    service-url: # 单配置  http://localhost:7001/eureka/ # 配置的是要注册的服务中心
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/ #集群配置
+  instance:
+    instance-id: springClod-producer-dept-8002 # 配置微服务的介绍
+    hostname: localhost
+    prefer-ip-address: true # 才能自动获取本机url 不配置的话会报错
+
+# 配置info的微服务介绍
+info:
+  app.name: producer-dept
+  author: 钟洪强
+
+

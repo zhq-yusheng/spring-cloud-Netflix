@@ -1,0 +1,7 @@
+server:
+  port: 9001
+
+# 必须配置这个不然页面监控出错
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: localhost

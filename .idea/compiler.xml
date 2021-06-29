@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="producer-dept-8003" />
+        <module name="producer-dept-8002" />
+        <module name="producer-dept-8001" />
+        <module name="SpringCloud-consumer-hystrix-dashboard" />
+        <module name="SpringCloud-eureka" />
+        <module name="SpringCloud-config-server-3344" />
+        <module name="SpingCloud-consumer-feign" />
+        <module name="SpringCloud-zuul-9527" />
+        <module name="SpringCloud-eureka-7003" />
+        <module name="SpringCloud-eureka-7002" />
+        <module name="SpringCloud-api" />
+        <module name="producer-dept-hystrix-8003" />
+        <module name="SpingCloud-consumer-80" />
+        <module name="SpringClod-config-client-3355" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
